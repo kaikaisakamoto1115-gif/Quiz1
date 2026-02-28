@@ -21,7 +21,7 @@
 <h1>Gallery</h1>
 <p>This page will show the exported plot.</p>
 
-<img src="study_vs_score.png" alt="Study hours vs exam score chart" style="max-width:100%;" />
+<img src="my.png" alt="Study hours vs exam score chart" style="max-width:100%;" />
 
 </main>
 
@@ -29,20 +29,3 @@
 
 </body>
 </html>
-plt.figure()
-plt.scatter(df["study_hours"], df["exam_score"])
-
-# Create trendline
-m, b = np.polyfit(df["study_hours"], df["exam_score"], 1)
-plt.plot(df["study_hours"], m*df["study_hours"] + b)
-
-plt.title("Study Hours vs Exam Score")
-plt.xlabel("Study Hours")
-plt.ylabel("Exam Score")
-
-# SAVE IMAGE HERE
-plt.savefig("study_vs_score.png")
-
-plt.show()
-
-print("Trendline slope:", m)
